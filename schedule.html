@@ -1,0 +1,387 @@
+
+<html>
+<head>
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=big5">
+<title>Intro to FinTech (金融科技導論)</title>
+<style>
+	A:link {text-decoration: none}
+	A:hover {text-decoration: underline}
+	A{text-decoration:none}
+</style>
+</head>
+
+
+<script src="/jang/js/lib/utility4webClient.js"></script>
+<script src="/jang/js/lib/videoList.js"></script>
+
+<!-- For using MathJax套件 -->
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script>
+toc=new Array();
+index=0;
+toc[index++]={"text":"News<br>最新消息", "link":"index.asp"};
+toc[index++]={"text":"Syllabus<br>課程大綱", "link":"basic.asp"};
+toc[index++]={"text":"Schedule<br>課程進度", "link":"schedule.html"};
+toc[index++]={"text":"Homework<br>作業", "link":"homework.asp"};
+toc[index++]={"text":"Term Project<br>期末計畫", "link":"project/2025/"};
+//toc[index++]={"text":"MATLAB Toolboxes<br>MATLAB工具箱", "link":"/jang/matlab/toolbox"};
+//toc[index++]={"text":"Evaluation Forms<br>各種表格", "link":"forms.asp"};
+
+function tocPrint(index){
+	document.writeln("<center>");
+	document.writeln("<table border=0 cellpadding=5 cellspacing=5>");
+	document.writeln("<tr>");
+	for (i=0; i<toc.length; i++) {
+		if (index!=i) {
+			document.writeln("<td bgcolor=\"#009999\"");
+			document.writeln("align=center valign=middle>");
+			document.writeln("<a href=\""+toc[i].link+"\">");
+			document.writeln("<font color=\"#ffffff\">");
+			document.writeln("<b>"+toc[i].text+"</b></font></a></td>");
+		} else {
+			document.writeln("<td bgcolor=\"#99cccc\"");
+			document.writeln("align=center valign=middle>");
+			document.writeln("<font color=\"#000000\">");
+			document.writeln("<b>"+toc[i].text+"</b></font></td>");
+		}
+	}
+	document.writeln("</tr>");
+	document.writeln("</table>");
+	document.writeln("</center>");
+}
+</script>
+
+<body background="/jang/graphics/background/yellow.gif">
+<h2 align=center><a href="index.asp">Intro to FinTech (金融科技導論)</a></h2>
+<h3 align=center>
+<a href="http://mirlab.org/jang">Roger Jang (張智星)</a>,
+<!--
+<a href="http://www.qf.nthu.edu.tw/files/15-1173-16636,c5738-1.php">Sean Han (韓傳祥)</a>,
+-->
+<a href="http://www3.math.ntu.edu.tw/people/bio.php?PID=67">Jimmy Chen (陳君明)</a>
+</h3>
+<script>tocPrint(2);</script>
+<hr>
+
+<h4><img src="/jang/graphics/dots/redball.gif">
+<a target=_blank href="https://www.youtube.com/playlist?list=PLKxweDCtFBtwdhqmm6kbauuE1_2Mmnfj8">2024 weekly recording</a></h4>
+
+<h4><img src="/jang/graphics/dots/redball.gif">
+Schedule of Fall 2025</h4>
+<blockquote>
+[<a href=#week0>Week01</a>,&nbsp;<font color=red>2025/09/03</font>]
+[<a href=#week1>Week02</a>,&nbsp;<font color=red>2025/09/10</font>]
+[<a href=#week2>Week03</a>,&nbsp;<font color=red>2025/09/17</font>]
+[<a href=#week3>Week04</a>,&nbsp;<font color=red>2025/09/24</font>]
+[<a href=#week4>Week05</a>,&nbsp;<font color=red>2025/10/01</font>]
+[<a href=#week5>Week06</a>,&nbsp;<font color=red>2025/10/08</font>]
+[<a href=#week6>Week07</a>,&nbsp;<font color=red>2025/10/15</font>]
+[<a href=#week7>Week08</a>,&nbsp;<font color=red>2025/10/22</font>]
+
+</blockquote>
+
+<blockquote>
+<font color=red>Note that the schedule will be updated as we move on.</font>
+</blockquote>
+
+
+<ol>
+<li><a name=week0></a><font color=red>2025/09/03</font><br>
+	<ul>
+	<li>Agenda
+		<ul>
+		<li>Intro. to the course by Roger using <a target=_blank href="/jang/courses/fintech">course website</a>
+		<li>Intro. to math/method part by Roger:
+			<script>pptLink("slide/2025/intro-method-roger.pptx");</script>
+		<li>Intro. to blockchain part by Jimmy
+			<script>pptLink("slide/2025/intro-blockchain-jimmy.pptx");</script>
+		</ul>
+	<li>Assignment
+		<ul>
+		<li>Please go over the course website thoroughly to understand all the regulations.
+			<ul>
+			<li>You need to view "Pre-class reading" before coming to the class. Please gather your questions and we can discuss them in the class.
+			<li>For "Optional" part, it's optional and not in the final exam. But I highly suggest your should read this part if you are not familiar with the corresponding topics.
+			</ul>
+		<li>Get familar with Python. You are going to use it in our assignment and final project.
+			<ul>
+			<li><a target=_blank href="https://www.youtube.com/watch?v=wqRlKVRUV_k&list=PL-g0fdC5RMboYEyt6QS2iLb_1m7QcgfHk&index=1&fbclid=IwAR3ooiGqRa--nVK3r2ryntnUa__t2XXcEze2t2qPadQA058GP0SZHEPfxKU">Python 入門教學課程</a>(Video)
+			<li><a href="https://ithelp.ithome.com.tw/m/users/20121116/ironman/2860?page=2">30天學python</a>
+<!--
+			<li><a href="https://www.learnpython.org">Learn Python - Free Interactive Python Tutorial</a>
+			<li><a href="https://realpython.com/installing-python/">Python 3 Installation & Setup Guide</a>
+-->
+			</ul>
+		</ul>
+	</ul>
+	
+
+<li><a name=week1></a><font color=red>2025/09/10</font><br>
+	<ul>
+	<li>Pre-class reading
+		<ul>
+		<li>基本金融知識
+			<ol type=a>
+			<li>Compounding: <script>svUrl("compounding");</script>
+			<li>IRR: <script>svUrl("irr");</script>
+			<li>柴鼠兄弟：<a target=_blank href="https://www.youtube.com/watch?v=yd3fZRrjzGM">銀行定存怎麼算利息錢？一次搞懂利率&殖利率</a> (8 min, 2017)
+			<li>柴鼠兄弟：<a target=_blank href="https://www.youtube.com/watch?v=zEDJ7LBZO4M">股票怎麼買？600秒學完股票交易基礎</a> (10 min, 2018)
+			<li>柴鼠兄弟：<a target=_blank href="https://www.youtube.com/watch?v=4jRM4Zze7Ng">股票國語言-基本/籌碼/技術/消息</a> (8 min, 2018)
+			<li>市場先生：<a target=_blank href="https://rich01.com/return-of-investment/">ROI是什麼意思？股票的投資報酬率怎麼算？</a>
+			</ol>
+		<li>數學基礎
+			<ol type=a>
+			<li>Matrix formulas:
+				<script>svUrl("matrixFormula");</script>
+				<!--<a href="http://u.camdemy.com/media/19263">2017/11/25</a>-->
+				<!--<a href="http://u.camdemy.com/media/10539">2016</a>-->
+			<li>Lagrange multipliers
+				<ol type=i>
+				<li><a href="https://www.youtube.com/watch?v=8mjcnxGMwFo">Lagrange Multipliers | Geometric Meaning & Full Example</a> (12 min, 2019)
+				<li><a href="https://math.libretexts.org/Courses/Monroe_Community_College/MTH_212_Calculus_III/Chapter_13%3A_Functions_of_Multiple_Variables_and_Partial_Derivatives/13.A%3A_Lagrange_Multipliers/13.10E%3A_Exercises_for_Lagrange_Multipliers">Exercises for Lagrange multipliers</a>
+				</ol>
+			<li><a href="https://www.youtube.com/watch?v=rLdoKZ7w0xI">Variance of differences of random variables | Probability and Statistics | Khan Academy</a> (11 min, 2010)
+			</ol>
+		</ul>
+	<li>Optional:
+		<ul>
+		<li>數學基礎：Lagrange multipliers
+			<ol type=a>
+			<li><a href="https://www.youtube.com/watch?v=lDehPPIgQpI">Lagrange乘數</a> (14 min, 2013)
+			<li><a href="https://www.youtube.com/watch?v=x6j6yFzTUgU">Lagrange Multipliers Practice Problems</a> (17 min, 2017)
+			<li><a href="https://pressbooks.pub/tourocorporatefinance/chapter/1-32-quadratic-solution-to-irr-2/">IRR 可能有兩個合理解答都滿足數學條件</a>
+			</ol>
+		<li>機器學習簡介
+			<ol type=a>
+			<li>Intro. to machine learning: <script>svUrl("mlIntro");</script>
+			<li>Commonly used datasets for ML: <script>svUrl("dataset");</script>
+			<li>K-nearest-neightbor: <script>svUrl("prKnnc");</script>
+			</ol>
+		<li>Python
+			<ol type=a>
+			<li>Python 用於機器學習的練習題：<a href="https://www.w3resource.com/machine-learning/scikit-learn/iris/index.php">Python: Machine learning - Scikit-learn Exercises, Practice, Solution</a>
+			</ol>
+		</ul>
+	<li>In-class activities
+		<ul>
+		<li> Reminder: Modification of the slides of "Compounding". (<a target=_blank href="https://hackmd.io/@rogerjang/HymZS1LgJl">Course material errata (教材勘誤)</a>)
+		<li> Intro to <a target=_blank href="homework.asp">HW00</a> by TA
+		<li> In-class survey: What do you want to learn from this class?
+		</ul>
+</ul>
+	
+
+<li><a name=week2></a><font color=red>2025/09/17</font><br>
+	<ul>
+	<li>Pre-class reading
+		<ul>
+		<li>技術指標
+			<ol type=a>
+			<li>K 線圖 (Candlestick chart): <script>svUrl("candlestickChart");</script>
+			<li>股票技術分析 (Technical analysis): <script>svUrl("technicalAnalysis");</script>
+			<li>MA 技術指標: <script>svUrl("ti-ma");</script>
+			<li>RSI 技術指標: <script>svUrl("ti-rsi");</script>
+			</Ol>
+		<li>基本金融知識
+			<ol type=a>
+			<li>CMoney: <a target=_blank href="https://www.cmoney.tw/notes/note-detail.aspx?nid=7095">為什麼 EPS(每股盈餘)不是越高越好？一分鐘帶你搞懂 股價、EPS、本益比的關係</a>（EPS & 本益比）
+			<li>CMoney: <a target=_blank href="https://www.cmoney.tw/learn/course/0520/topic/1232">股票股利、現金股利是什麼？配股、配息怎麼計算？</a>（從股息「配股配息」看出經營者心態）
+			<li>CMoney: <a target=_blank href="https://www.cmoney.tw/learn/course/0520/topic/1078">什麼是除權除息？投資台股必須了解的事</a>
+			<li>市場先生：<a target=_blank href="https://rich01.com/blog-post_76/">除權除息是什麼？除權息如何計算？一次看懂除權息</a>
+			<li>市場先生：<a target=_blank href="https://rich01.com/what-sharpe-ratio/">什麼是夏普率(Sharpe Ratio)？要如何計算？</a>
+			<li>Sharpe ratio:  <script>svUrl("sharpeRatio");</script>
+			</ol>
+		<li>數學基礎
+			<ol type=a>
+			<li>Jensen's inequality (which leads to AM-GM inequality)
+				<ul>
+				<li>Jensen's inequality：<script>svUrl("jensenInequality");</script>
+				<li><a target=_blank href="https://artofproblemsolving.com/community/c2473h1038754">Exercises on mean inequality</a> (Some with solutions!)
+				</ul>
+			<li>Cauchy-Scharz inequality
+				<ul>
+				<li>Quick Cauchy Schwarz Proof: <script>videoLink("https://www.youtube.com/watch?v=nPBeQ3Z6QvA");</script> (5 min, 2018)
+				<li>Another simple way to prove it: $(ax-p)^2+(bx-q)^2+(cx-r)^2=0$ has a single root or no root at all. ==> $\Delta \leq 0$ ==> $(a^2+b^2+c^2)(p^2+q^2+r^2)\geq(ap+bq+cr)^2$, Q.E.D.
+				<li><a target=_blank href="https://artofproblemsolving.com/community/c2473">Exercises of Cauchy-Schwarz Inequality</a> (Some with solutions!)
+				</ul>
+			</ol>
+		</ul>
+	<li>Optional:
+		<ul>
+		<li>基本金融知識
+			<ol type=a>
+			<li><a href="https://www.realvantage.co/insights/what-is-sharpe-ratio/">What is Sharpe Ratio?</a> (Conversion of SR)
+			</ol>
+		<li>技術指標（有點像是在算命...）
+			<ol type=a>
+			<li>柴鼠兄弟：<a target=_blank href="https://www.youtube.com/watch?v=V__cjhFm0L8">技術面：徹底搞懂技術線圖七大元素～先從各種K線開始 (股票技術面)</a> (10 min, 2018)
+			<li>柴鼠兄弟：<a target=_blank href="https://www.youtube.com/watch?v=ti8m7rJmB3E">技術面：判斷股價強弱的關鍵~先學會看均線 (股票技術面)</a> (9 min, 2018)
+			<li>柴鼠兄弟：<a target=_blank href="https://www.youtube.com/watch?v=7hTKPeCAla0">技術面：為什麼股市老手愛看量？從買賣雙方冷熱認識成交量原理</a> (11 min, 2019)
+			<li>柴鼠兄弟：<a target=_blank href="https://www.youtube.com/watch?v=PKsMKvp9ICs">技術面：拆解分析KD技術指標 二條曲線背後如工藝品般的三道工法</a> (12 min, 2020)
+			<li>柴鼠兄弟：<a target=_blank href="https://www.youtube.com/watch?v=vVadeSzwMTI">技術面：台積電RSI怎麼算才能跟電腦一樣？看股價相對強弱 快慢RSI技術指標順便學起來</a> (10 min, 2021)
+			</ol>
+		<li>數學基礎
+			<ul>
+			<li>Problem-Solving Trick No One Taught You: RMS-AM-GM-HM Inequality:
+			<script>videoLink("https://www.youtube.com/watch?v=_gTClIbHreI");</script> (8 min, 2018, great animation!)
+			</ul>
+		</ul>
+	</ul>	
+	
+
+<li><a name=week3></a><font color=red>2025/09/24</font><br>
+	<ul>
+	<li>Pre-class reading
+		<ul>
+		<li>基本金融知識
+			<ol type=a>
+			<li>柴鼠兄弟：<a target=_blank href="https://www.youtube.com/watch?v=9Oew02e5uqg">基本面：股票怎麼選？基本面先問這三題 (股本/EPS)</a> (8 min, 2018)
+			<li>柴鼠兄弟：<a target=_blank href="https://www.youtube.com/watch?v=VnYdpRMU8Y0">基本面：0050也藏有ROE不死鳥啊！新手學基本面二大指標 評估企業賺錢能力</a> (7 min, 2018)
+			<li>柴鼠兄弟：<a target=_blank href="https://www.youtube.com/watch?v=yUUO7dtFInk">基本面：買貴還是買便宜？股票估值的基本面三大指標～(本益比/股價淨值比/殖利率)</a> (8 min, 2018)
+			<li>柴鼠兄弟：<a target=_blank href="https://www.youtube.com/watch?v=HDz6xAbNQ70">基礎篇-什麼是ETF?</a> (9 min, 2018)
+				（若你有興趣鑽研 ETF，可參考 <a href="https://www.youtube.com/watch?v=HDz6xAbNQ70&list=RDCMUC45i13dEfEVac2IEJT_Nr5Q&start_radio=1&t=36s">ETF 全系列</a>。）
+			<li>Stocksardine: <a href="https://stocksardine.com/%E8%82%A1%E5%83%B9%E6%B7%A8%E5%80%BC%E6%AF%94-%E7%B0%A1%E5%96%AE%E4%BD%86%E5%B8%B8%E8%A2%AB%E8%AA%A4%E7%94%A8%E7%9A%84%E6%8C%87%E6%A8%99/">股價淨值比 – 簡單但常被誤用的指標</a>
+<!--
+			<li>台指期介紹：<a href="https://www.mobile01.com/topicdetail.php?f=291&t=1794436&last=24039291#22916672">「期貨」是什麼東西?</a>
+-->
+			</ol>
+		<li>Dynamic programming (DP)
+			<ol type=a>
+			<li>Intro to Dynamic Programming:
+				<script>svUrl("dp-intro");</script>
+			<li>Back to the future: The optimal strategy when the stock price is fully know in advance:
+				<script>svUrl("dp4stockTrading");</script>
+			</ol>
+		<li>LLM & RAG
+			<ul>
+			<li>生成式AI輕度簡介：<script>videoLink("https://www.youtube.com/watch?v=JGtqpQXfJis");</script> (29 min, 2024)（李宏毅）
+			<li>相關性03：文本匹配（TF-IDF、BM25、詞距）：<script>videoLink("https://www.youtube.com/watch?v=fa-SLBNUe14");</script> (19 min, 2024)（王數森老師）
+			<li>Word Embedding and Word2Vec, Clearly Explained!!!: <script>videoLink("https://www.youtube.com/watch?v=viZrOnJclY0");</script> (16 min, 2023)（by Stat Quest with Josh Starmer）
+			<li>RAG introduction: <script>svUrl("rag");</script>
+			</ul>
+		</ul>
+	<li>Optional
+		<ul>
+		<li>Other applications of DP
+			<ol type=a>
+			<li>DP for longest common subsequence (LCS): <script>svUrl("dp-lcs");</script>
+			<li>DP for matrix chain product (MCP): <script>svUrl("dp-mcp");</script>
+			</ol>
+		<li>LLM & RAG
+			<ul>
+			<li>以生成式AI為基礎的知識檢索 <script>videoLink("https://www.youtube.com/watch?v=DVgYOhqy3bo");</script> (69 min, 2024/07/03)（楊德倫的口試）
+			<!--
+			<li>以生成式AI為基礎的知識檢索 <script>videoLink("https://www.youtube.com/watch?v=sBkV_5lT1uE");</script> (69 min, 2024/07/03)（楊德倫的口試）
+			-->
+			<li>相關性01：搜索相關性的定義與分檔 <script>videoLink("https://www.youtube.com/watch?v=T1YfGx-gUaY");</script> (21 min, 2024)（王數森老師）
+			<li><a target=_blank href="https://www.cc.ntu.edu.tw/chinese/epaper/home/20141220_003103.html">文字探勘之前處理與TF-IDF介紹</a>
+			<li>Unsupervised Learning - Word Embedding <script>videoLink("https://www.youtube.com/watch?v=X7PH3NuYW0Q");</script> (41 min, 2024)（李宏毅老師）
+			<li>Approximate Nearest Neighbours in FAISS: Cell Probe 101: <script>videoLink("https://www.youtube.com/watch?v=iY7HuG1r5YM");</script> (7 min, 2023)（by Mark）
+			</ul>
+		</ul>
+	<li> In-class activity
+		<ul>
+		<li> Jensen's inequality (AM-GM inequality)：<script>svUrl("jensenInequality-exercise");</script>
+		<li>Sample tests (which are likely to appear in the final exam)
+			<ul>
+			<li><a target=_blank href="/jang/books/fintech/quiz/list.asp.html">Fintech</a> 
+			<li><a target=_blank href="/jang/books/dcpr/quiz/list-AM-GM%20inequality_Clustering_DP_Dataset_Document%20classification_Feature%20selection_Gradient%20descent_MLE_MLP_Math%20basics_Optimization_PCA_Performance%20evaluation_Performance%20index_Random%20variables.asp">Math Basics & Machine learning
+			</ul>
+		</ul>
+	</ul>
+	
+
+<li><a name=week4></a><font color=red>2025/10/01</font> (by Jimmy)<br>
+	<ul>
+	<li>In-class activity
+		<ul>
+		<li>CryptoCurrency & BlockChain
+			<ul>
+			<li>密碼貨幣與區塊鏈 (1)：
+				<script>pptLink("slide/2025/NTU_FinTech_Blockchain_1_2025.pdf");</script>
+				<script>videoLink("https://www.youtube.com/watch?v=qLGqrulrr2Q&list=PLKxweDCtFBtzLzrxT_IYhtjtkOkBinTPc&index=1");</script> (157 min, 2025)
+				<!--
+				<script>pptLink("slide/2024/NTU FinTech 2024 0925.pdf");</script>
+				<script>videoLink("https://www.youtube.com/watch?v=0sRoNrnLqwk");</script> (141 min, 2021)
+				-->
+			</ul>
+		</ul>
+	</ul>
+	
+
+<li><a name=week5></a><font color=red>2025/10/08</font> (by Jimmy)<br>
+	<ul>
+	<li>In-class activity
+		<ul>
+		<li>CryptoCurrency & BlockChain
+			<ul>
+			<li>密碼貨幣與區塊鏈 (1)：<script>pptLink("slide/2025/NTU_FinTech_Blockchain_1_2025.pdf");</script>
+			<li>密碼貨幣與區塊鏈 (2)：<script>pptLink("slide/2025/NTU_FinTech_Blockchain_2_2025.pdf");</script>
+			</ul>
+			<!--
+			<li>CryptoCurrency and Blockchain (2) [part 1]: 
+			<script>pptLink("slide/2021spring/FinTech_CryptoCurrency_2 2021.pdf");</script>
+			<script>videoLink("https://www.youtube.com/watch?v=u7xmJxP9Xyw");</script> (92 min, 2021)
+			-->
+		<li>Abstract Algebra <script>pptLink("slide/2022/Algebra.pdf");</script>
+			<ul>
+			<li>Part 1 (pages 01-10): <script>videoLink("https://www.youtube.com/watch?v=2HZ7Jqo8LJI");</script> (25 min, 2017)
+			<li>Part 2 (pages 11-19): <script>videoLink("https://www.youtube.com/watch?v=yB7-bF08M_s");</script> (23 min, 2017)
+			</ul>
+		<!--
+			<script>videoLink("https://www.youtube.com/watch?v=uBQGcJVvqSc");</script> (pages 01-10, 6 min, 2021)
+			<script>videoLink("https://www.youtube.com/watch?v=NX8MT3V94cs");</script> (pages 12-29, 83 min, 2021)
+		-->
+		<!--
+				<li>Video-2019: <a href="http://eeclass.formosasoft.com/media/doc/1351">Part 1</a>, <a href="http://eeclass.formosasoft.com/media/doc/1352">part 2</a>
+		-->
+		</ul>
+	</ul>
+	
+
+<li><a name=week6></a><font color=red>2025/10/15</font> (by Jimmy)<br>
+	<ul>
+	<li>In-class activity
+		<ul>
+		<li>CryptoCurrency and Blockchain (2) [part 2]: 
+			<script>pptLink("slide/2021spring/FinTech_CryptoCurrency_2 2021.pdf");</script>
+			<script>videoLink("https://youtu.be/fa3i7Y3yBxI");</script> (64 min, 2021)
+		<li>CryptoCurrency and Blockchain (3): 
+			<script>pptLink("slide/2021/FinTech_CryptoCurrency_3 2021.pdf");</script>
+			<script>videoLink("https://youtu.be/SpvPtL-HiHU");</script> (74 min, 2021)
+		<li>量子計算對資訊安全的威脅與應對之道: 
+			<script>pptLink("slide/2021/量子計算對資訊安全的威脅與應對之道.pdf");</script>
+			<script>videoLink("https://youtu.be/swWF-V7RDyo");</script> (59 min, 2021)
+		</ul>
+	<li>Optional
+		<ul>
+		<li>Intro. to Fintech: BlockChain and CryptoCurrency:
+			<script>pptLink("slide/2024/NTU FinTech 2024 1113.pdf");</script>
+		<li>量子計算:
+			<script>pptLink("slide/2023/量子計算 2023 1108.pptx");</script>
+			<script>videoLink("https://youtu.be/Qq8GmSAGB-I");</script> (46 min, 2023)
+		</ul>
+	</ul>
+	
+
+<li><a name=week7></a><font color=red>2025/10/22</font> (by Jimmy)<br>
+	<ul>
+	<li>In-class activity
+		<ul>
+		<li>CryptoCurrency and Blockchain (part 4):
+			<script>pptLink("slide/2021spring/FinTech_CryptoCurrency_4 2021.pdf");</script>
+			<script>videoLink("https://youtu.be/7fkc4nrKKGk");</script> (119 min, 2021)
+		</ul>
+	<li>Optional
+		<ul>
+		<li>Intro. to Fintech: BlockChain and CryptoCurrency (2022/11/16):
+			<script>pptLink("slide/2022/FinTech_Blockchain_20221116.pdf");</script>
+		</ul>
+	<li>Others
+		<ul>
+		<li>Sage 數學軟體簡介: <script>pptLink("slide/2022/Intro_Sage.pdf");</script>
+		</ul>
+	</ul>
+	</ol><hr>
